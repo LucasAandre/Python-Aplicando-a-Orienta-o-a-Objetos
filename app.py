@@ -12,6 +12,7 @@ restaurante_hamburger.receber_avaliacao('Pamela', 5.4)
 
 def main():
     Restaurante.listar_restaurantes()
+    #print(restaurante_arabe.ativo) # ✘
 
 
 if __name__ == '__main__': # Se for meu arquivo principal da aplicação (main)

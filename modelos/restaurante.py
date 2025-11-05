@@ -17,9 +17,9 @@ class Restaurante: # Uma classe chamada Restaurante | Nome de classe sempre com 
     
     @classmethod
     def listar_restaurantes(cls): # Um método para a classe e não para os objetos
-        print(f'{'RESTAURANTE'.ljust(25)} | {'CATEGORIA'.ljust(25)} | {'STATUS'}')
+        print(f'{'RESTAURANTE'.ljust(25)} | {'CATEGORIA'.ljust(25)} | {'AVALIAÇÃO'.ljust(25)} | {'STATUS'}')
         for restaurante in cls.restaurantes:
-            print(f'{restaurante._nome.ljust(25)} | {restaurante._categoria.ljust(25)} | {restaurante.ativo}') # Não uso self, pois já declarei que estou puxando da lista de restaurantes. Logo, é DAQUELE restaurante em específico, vide o for
+            print(f'{restaurante._nome.ljust(25)} | {restaurante._categoria.ljust(25)} | {str(restaurante.media_avaliacoes).ljust(25)} | {restaurante.ativo}') # Não uso self, pois já declarei que estou puxando da lista de restaurantes. Logo, é DAQUELE restaurante em específico, vide o for
 
     @property # Responsável por alterar a forma como determinado atributo é lido
     def ativo(self):
