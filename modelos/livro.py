@@ -1,5 +1,6 @@
 from time import sleep
 class Livro:
+    '''Representa um sistema de controle de livros e suas características'''
     livros = []
     consulta_livros = []
     def __init__(self, titulo, autor, ano_publicacao):
@@ -10,13 +11,16 @@ class Livro:
         Livro.livros.append(self)
 
     def __str__(self):
+        '''Retorna uma representação em string do livro'''
         return f'O título {self._titulo} foi lançado pelo escritor {self._autor} em {self._ano_publicacao}'
     
     def emprestar(self):
+        '''Altera o status de disponibilidade do livro'''
         self._disponivel = not self._disponivel
     
     @classmethod
     def listar_livros(cls):
+        '''Exibe na tela uma lista com todos os livros e suas informações'''
         print()
         print(f'{'LIVRO'.ljust(35)} | {'AUTOR'.ljust(35)} | {'ANO'.ljust(35)} | {'SITUAÇÃO'.ljust(35)}\n')
         for livro in cls.livros:
@@ -24,6 +28,7 @@ class Livro:
     
     @classmethod
     def verificar_disponibilidade(cls, ano_consulta):
+        '''Checa a disponibilidade de cada livro e exibe uma lista dos livros disponíveis'''
         print()
         print('Checando disponibilidade...\n')
         sleep(5)
@@ -40,5 +45,6 @@ class Livro:
 
     @property
     def disponivel(self):
+        '''Retorna uma representação em string de acordo com o status de disponilidade do livro'''
         return f'Disponível para empréstimo' if self._disponivel else 'Não disponível para empréstimo'
     

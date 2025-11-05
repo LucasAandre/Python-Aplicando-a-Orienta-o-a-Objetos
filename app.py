@@ -6,8 +6,8 @@ restaurante_arabe = Restaurante('Habybe', 'Árabe')
 
 restaurante_mexicano.alternar_status()
 
-restaurante_arabe.receber_avaliacao('Lucas', 10.0)
-restaurante_arabe.receber_avaliacao('Julia', 9.5)
+restaurante_arabe.receber_avaliacao('Lucas', 10)
+restaurante_arabe.receber_avaliacao('Julia', 10)
 restaurante_hamburger.receber_avaliacao('Pamela', 5.4)
 
 def main():

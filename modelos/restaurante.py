@@ -27,17 +27,24 @@ class Restaurante: # Uma classe chamada Restaurante | Nome de classe sempre com 
         return '✅' if self._ativo else '✘' # Se ativo, se não ativo
     
     def alternar_status(self): # Um método criado para cada instância / objeto
+        '''Alterna o status do restaurante'''
         self._ativo = not self._ativo # Estou invertendo o status do meu objeto
 
     def receber_avaliacao(self, cliente, nota):
+        '''Recebe e registra na lista Avaliação cada avaliação do restaurante'''
         avaliacao = Avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao)
 
     @property
     def media_avaliacoes(self):
+        '''Calcula e retorna a média das avaliações do restaurante'''
         if not self._avaliacao:
             return 'Sem avaliações'
         soma_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
         quantidade_notas = len(self._avaliacao)
         media = round(soma_notas / quantidade_notas, 1)
-        return media
+        if media >= 5:
+            media = 5
+            return media
+        else:
+            return media
