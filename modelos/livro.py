@@ -29,6 +29,7 @@ class Livro:
     @classmethod
     def verificar_disponibilidade(cls, ano_consulta):
         '''Checa a disponibilidade de cada livro e exibe uma lista dos livros disponíveis'''
+        Livro.consulta_livros.clear()
         print()
         print('Checando disponibilidade...\n')
         sleep(5)
